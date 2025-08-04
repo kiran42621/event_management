@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+psycopg2-binary  
+SQLAlchemy
+pydantic
+pydantic[email]
+pytest
+httpx
+pytest-asyncio
+faker
+python-dateutil
+pytz
