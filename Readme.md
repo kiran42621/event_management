@@ -28,6 +28,7 @@ This is a Restful API built with FastAPI for simple event management
 ```uvicorn app.main:services --host 0.0.0.0 --port 8000```
 8. Now application should be running on http://localhost:8000
 ### Environment variables
+```
 POSTGRES_USER=<Postgres_User>
 POSTGRES_PASSWORD=<User_Password>
 POSTGRES_DB=<Database_name>
@@ -35,6 +36,7 @@ POSTGRES_HOST=<Database_host>
 POSTGRES_PORT=<Database_port>
 PAGENATION_LIMIT=<Pagenation_length>
 TIMEZONE=<Time_zone>
+```
 ### API Documentation
 swagger specs is available on "/apidocs"
 json specs is available on "/docs"
