@@ -120,7 +120,7 @@ def register_attendee(event_id: str, attendee: AttendeesList):
       raise HTTPException(status_code=400, detail="Invalid event id")
     
     # MaxCapacity validation
-    if len(event.attendees) > event.maxCapacity:
+    if len(event.attendees) >= event.maxCapacity:
       raise HTTPException(status_code=400, detail="Currently event attendee slots are full")
 
     existing_attendee = db_session.query(Attendees).filter(
@@ -130,7 +130,7 @@ def register_attendee(event_id: str, attendee: AttendeesList):
 
     # Attendee exists validation
     if existing_attendee:
-      return EventDetail.from_orm(event)
+      raise HTTPException(status_code=400, detail="Attendee already registered for this event")
 
     new_attendee = Attendees(
       name=attendee.name,

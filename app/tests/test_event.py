@@ -152,7 +152,7 @@ def test_register_attendee_already_registered():
   assert res1.status_code == 200
   
   res2 = client.post(f"/events/{event['id']}/register", json=attendee)
-  assert res2.status_code == 200
+  assert res2.status_code == 400
 
 def test_get_attendees_success():
   name = generate_random_string(10)
